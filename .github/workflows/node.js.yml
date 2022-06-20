@@ -48,6 +48,6 @@ jobs:
           # Specify Browser since container image is compile with Firefox
           browser: electron
           working-directory: ./s6-rym-clone-react
-          build: npm run build
+          build: CI='' npm run build
           start: npm start
         
