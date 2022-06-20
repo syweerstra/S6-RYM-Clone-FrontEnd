@@ -1,0 +1,46 @@
+.header{
+    font-size: 1.4em;
+    height: 1.5em;
+    text-align: left;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    margin-bottom: 1em;
+    background-color: #152238;
+
+    display: flex;
+    align-items: center;
+}
+
+.logo-header{
+    background-size: 2.22222em 2.22222em;
+    display: inline-block;
+    width: 2.22222em;
+    height: 2.22222em;
+    background-image: url(https://e.snmc.io/3.0/img/logo/sonemic-32.png);
+
+    float: left;
+    margin-top: 0.35rem;
+    margin-right: 0.7em;
+    border-radius: 50%;
+}
+
+
+.header-item{
+    color: #dbe0e9;
+    background: #152238;
+    text-decoration: none;
+    user-select: none;
+
+    height: 100%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.header-item:hover{
+    background: rgba(128,128,128,.1);
+
+}
+
+.header-item-profile{
+  margin-left: auto;
+}

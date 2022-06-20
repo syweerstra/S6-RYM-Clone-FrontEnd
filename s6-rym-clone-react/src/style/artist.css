@@ -1,0 +1,120 @@
+.wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.column{
+    float: left;
+    width: 33%;
+    height: 100%;
+    background-color: rgba(22,26,37,1);
+    border-right: #272a37 1px solid;
+}
+
+.album-info-column{
+    float: left;
+    width: 66%;
+    height: 100%;
+    background-color: rgba(22,26,37,1);
+
+    padding-left: 30px;
+    padding-top: 13px;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.album-image{
+    width: 100%;
+}
+
+.artist-page .artist-name{
+    border: none !important;
+    margin-top: 0 !important;
+    padding-left: 0;
+    margin-bottom: 20px;
+
+    font-size: 2.5em;
+    color: #dbe0e9;
+    font-weight: bold;
+}
+
+.artist-info{
+
+    padding-top: 1em;
+    color: #9da3af;
+}
+
+.info-header{
+    font-size: .8em;
+    color: #9da3af;
+    margin-bottom: 0.1em;
+}
+
+.info-content{
+    margin-bottom: 1em;
+    color: #dbe0e9;
+}
+
+.discography{
+
+}
+
+.disco-header{
+    font-weight: bold;
+    font-size: 1.2em;
+    padding-top: 1em;
+}
+
+.image-release{
+    width: 2.8em;
+    height: 2.8em;
+    border-radius: 4px;
+}
+
+.info-table-header{
+    text-align: left;
+    font-size: 0.6em;
+    color: #757575;
+}
+
+.info-table-content{
+    font-weight: normal;
+    font-size: 0.85em;
+    color: #b4b9c5;
+}
+.title-release-date{
+    text-align: left;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #89c4f0;
+    width: 350px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.release-date{
+    font-weight: normal;
+    font-size: 0.85em;
+    color: #b4b9c5;
+}
+
+.average-rating{
+    color: #44c6ea;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.artist-page th{
+    color: #b4b9c5;
+    font-weight: normal;
+    padding-right: 25px;
+    text-align: left;
+}
