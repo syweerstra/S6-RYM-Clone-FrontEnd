@@ -48,4 +48,10 @@ jobs:
           working-directory: ./s6-rym-clone-react
           build: npm run build
           start: npm start
-        
+      - name: Save videos
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+
