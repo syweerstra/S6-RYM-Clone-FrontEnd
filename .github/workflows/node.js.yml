@@ -10,25 +10,44 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+ cypress-run:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+    container: cypress/browsers:node12.18.3-chrome87-ff82
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-        cache-dependency-path: s6-rym-clone-react/package-lock.json
-    - run: cd 's6-rym-clone-react'
-    - run: npm i --save node-pre-gyp
-    - run: npm install
-    - run: npm run build --if-present
-    - run: npm test
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      # cache NPM modules and Cypress binary folder
+      # we can use "package-lock.json" as the key file
+      # to make sure we use the precise Cypress version
+      # (which is important when using ^ version in package.json)
+      # see https://github.com/actions/cache
+      - name: Cache NPM and Cypress 📦
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/Cypress
+            node_modules
+          key: my-cache-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Cypress 📥
+        run: npm i https://cdn.cypress.io/beta/npm/10.0.0/linux-x64/10.0-release-04e5d70d48a1337b702f53ac9677350167eb7ae6/cypress.tgz
+
+#       - name: Cypress tests 🧪
+#         uses: ./
+#         with:
+#           working-directory: examples/v10/install-only
+#           install: false
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests 
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        env:
+           CI: false
+        with:
+          # Specify Browser since container image is compile with Firefox
+          browser: electron
+          working-directory: ./s6-rym-clone-react
+          build: CI='' npm run build
+          start: npm start
+        
