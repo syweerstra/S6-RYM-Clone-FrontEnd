@@ -26,8 +26,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: s6-rym-clone-react/package-lock.json
     - run: cd 's6-rym-clone-react'
     - run: npm i --save node-pre-gyp
+    - run: npm install
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
