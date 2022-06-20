@@ -15,6 +15,6 @@ describe('login ', () => {
     cy.get('button[name=loginButton]').click();
 
 
-    cy.url().should('include', '/user/test123')
+    cy.url().should('include', '/user/scoop')
   })
 })
