@@ -43,7 +43,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         env:
-           CI: ""
+           CI: false
         with:
           # Specify Browser since container image is compile with Firefox
           browser: electron
