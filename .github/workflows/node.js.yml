@@ -49,7 +49,7 @@ jobs:
           build: npm run build
           start: npm start
       - name: Save videos
-      - uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v1
         if: always()
         with:
           name: cypress-videos
