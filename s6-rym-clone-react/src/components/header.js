@@ -11,7 +11,7 @@ function Header(props){
 
             {localStorage.getItem("JWT") !== null ?
                 <a href={"/user/" + localStorage.getItem("username")} className={"header-item header-item-profile"}> Profile </a>
-                : 
+                :
                 <a href={"/login/"} className={"header-item header-item-profile"}> Login </a>
             }
         </header>
