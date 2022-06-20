@@ -37,11 +37,11 @@ return(
         <div className={"login-header"}> Log in</div>
         <div className={"login-box"}>
             <div> Username </div>
-            <input className={"login-input"} value={username} onChange={e => setUsername(e.target.value)}/>
+            <input name={"username"} className={"login-input"} value={username} onChange={e => setUsername(e.target.value)}/>
             <div> Password </div>
-            <input className={"login-input"} value={password} onChange={e => setPassword(e.target.value)}/>
+            <input name={"password"} className={"login-input"} value={password} onChange={e => setPassword(e.target.value)}/>
         </div>
-        <button className={"login-button"} onClick={Login}>
+        <button name={"loginButton"} className={"login-button"} onClick={Login}>
             Log in
         </button>
     </div>
