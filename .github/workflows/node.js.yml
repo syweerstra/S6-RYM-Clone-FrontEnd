@@ -45,3 +45,4 @@ jobs:
         with:
           # Specify Browser since container image is compile with Firefox
           browser: firefox
+          working-directory: ./s6-rym-clone-react
