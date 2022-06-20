@@ -42,12 +42,10 @@ jobs:
       # and run all Cypress tests 
       - name: Cypress run
         uses: cypress-io/github-action@v4
-        env:
-           CI: false
         with:
           # Specify Browser since container image is compile with Firefox
           browser: electron
           working-directory: ./s6-rym-clone-react
-          build: CI='' npm run build
+          build: npm run build
           start: npm start
         
